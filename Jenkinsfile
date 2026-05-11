@@ -25,7 +25,7 @@ pipeline {
                 dir('/home/koshi/devops-158-koshi-tp') {
                     sh '''
                         . venv/bin/activate
-                        pip install flask
+                        pip install flask pytest
                     '''
                 }
             }
