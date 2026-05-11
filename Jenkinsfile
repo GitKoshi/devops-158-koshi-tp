@@ -1,4 +1,3 @@
-cat > /home/koshi/devops-158-koshi-tp/Jenkinsfile << 'EOF'
 pipeline {
     agent any
 
@@ -55,4 +54,3 @@ pipeline {
         }
     }
 }
-EOF
