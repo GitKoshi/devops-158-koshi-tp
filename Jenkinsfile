@@ -30,7 +30,16 @@ pipeline {
                 }
             }
         }
-
+stage('Run unit tests') {
+            steps {
+                dir('/home/koshi/devops-158-koshi-tp') {
+                    sh '''
+                        . venv/bin/activate
+                        python -m pytest test_app.py -v --tb=short
+                    '''
+                }
+            }
+        }
         stage('Restart Flask app') {
             steps {
                 script {
