@@ -24,7 +24,7 @@ pipeline {
             steps {
                 dir('/home/koshi/devops-158-koshi-tp') {
                     sh '''
-                        source venv/bin/activate
+                        . venv/bin/activate
                         pip install flask
                     '''
                 }
@@ -37,7 +37,7 @@ pipeline {
                     sh 'pkill -f "python app.py" || true'
                     sh '''
                         cd /home/koshi/devops-158-koshi-tp
-                        source venv/bin/activate
+                        . venv/bin/activate
                         nohup python app.py > flask.log 2>&1 &
                     '''
                 }
