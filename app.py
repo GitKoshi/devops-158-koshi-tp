@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return "Hello EPSIC 158! - Modifié automatiquement par Jenkins !"
+    return "Hello EPSIC 158! - Test Lagona"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
