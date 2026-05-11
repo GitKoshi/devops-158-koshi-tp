@@ -1,8 +1,9 @@
+cat > /home/koshi/devops-158-koshi-tp/Jenkinsfile << 'EOF'
 pipeline {
     agent any
 
     triggers {
-        pollSCM('* * * * *')  // vérifie toutes les minutes
+        pollSCM('* * * * *')
     }
 
     stages {
@@ -43,6 +44,8 @@ pipeline {
                 }
             }
         }
+    }
+
     post {
         success {
             echo 'Déploiement automatique réussi ! BRAVO DAMN'
@@ -52,4 +55,4 @@ pipeline {
         }
     }
 }
-
+EOF
