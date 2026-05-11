@@ -38,13 +38,11 @@ pipeline {
                     sh '''
                         cd /home/koshi/devops-158-koshi-tp
                         . venv/bin/activate
-                        nohup python app.py > flask.log 2>&1 &
+                        setsid nohup python app.py > flask.log 2>&1 &
                     '''
                 }
             }
         }
-    }
-
     post {
         success {
             echo 'Déploiement automatique réussi ! BRAVO DAMN'
