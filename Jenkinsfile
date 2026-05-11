@@ -36,10 +36,11 @@ pipeline {
                 script {
                     sh 'pkill -f "python app.py" || true'
                     sh '''
+                        export JENKINS_NODE_COOKIE=dontKillMe
                         cd /home/koshi/devops-158-koshi-tp
                         . venv/bin/activate
-                        setsid nohup python app.py > flask.log 2>&1 &
-                    '''
+                        nohup python app.py > flask.log 2>&1 &
+                    ''
                 }
             }
         }
